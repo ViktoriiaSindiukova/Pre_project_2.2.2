@@ -2,7 +2,6 @@ package web.service;
 
 import org.springframework.stereotype.Repository;
 import web.model.Car;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,9 +17,10 @@ public class CarServiceImpl implements CarService {
         cars.add(new Car("Mini Cooper", 3672, 2016));
         cars.add(new Car("Infinity", 145, 2022));
     }
+
     @Override
     public List<Car> getAllCars(int count) {
-        if (count<1 || count>=5){
+        if (count < 1 || count >= 5) {
             return cars;
         }
         return cars.stream().limit(count).toList();
